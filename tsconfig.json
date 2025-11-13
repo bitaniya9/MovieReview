@@ -1,0 +1,61 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "commonjs",
+    "target": "ES2020",
+
+    // For nodejs:
+    "lib": ["ES2020"],
+    "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs and Debugging
+    "sourceMap": true, //Generate .map files for debugging
+    "declaration": true, //Generate .d.ts type files for your code
+    "declarationMap": true, //Source maps for declaration files
+
+    // Stricter Typechecking
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Style Options
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    // "strict": true,
+    // "jsx": "react-jsx",
+    // "verbatimModuleSyntax": true,
+    // "isolatedModules": true,
+    // "noUncheckedSideEffectImports": true,
+    // "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    /* ===== Module settings ===== */
+    "moduleResolution": "node", // Use Node-style module resolution
+    "esModuleInterop": true, // Allow 'import express from "express"'
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Helps tools like ts-node work well
+    "baseUrl": "./src",
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@application/*": ["application/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@presentation/*": ["presentation/*"]
+    }
+  },
+  "include": ["src"], // Only compile code inside the 'src' folder
+  "exclude": ["node_modules", "dist"] // Don’t recompile dependencies or built code
+}
